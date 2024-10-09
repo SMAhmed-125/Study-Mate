@@ -1,7 +1,7 @@
 import React from 'react';
 
 const About = () => (
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px' }}>
+    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px', color: '#3BBA9C', fontFamily: 'Montserrat, Inter, sans-serif' }}>
         <h2>About Study Mate</h2>
         <p>
             Study Mate is your personalized dashboard designed to help you track
