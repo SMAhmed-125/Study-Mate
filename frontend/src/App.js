@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const theme = createTheme({
   palette: {
