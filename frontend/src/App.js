@@ -4,26 +4,27 @@ import Progress from './pages/Progress';
 import StudentDashboard from './pages/StudentDashboard';
 import Resources from './pages/Resources';
 import Home from './pages/Home';
+import About from './pages/About';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-});
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: '#563727',
+//     },
+//     secondary: {
+//       main: '#372C2E',
+//     },
+//   },
+// });
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    // <ThemeProvider theme={theme}>
       <Router>
         <div className="App">
           <header className="App-header">
@@ -34,12 +35,13 @@ function App() {
                 <Route path="/progress" element={<Progress />} />
                 <Route path="/dashboard" element={<StudentDashboard />} />
                 <Route path="/resources" element={<Resources />} />
+                <Route path="/about" element={<About />} />
               </Routes>
             </div>
           </header>
         </div>
       </Router>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }
 
