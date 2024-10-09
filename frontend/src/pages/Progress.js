@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, CardContent, Typography, Grid2 } from '@mui/material';
+import api from '../services/api';
 
 const Progress = () => {
   const [progress, setProgress] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/progress')
+    api.get('/Progress')
       .then(response => setProgress(response.data))
       .catch(error => console.error(error));
   }, []);

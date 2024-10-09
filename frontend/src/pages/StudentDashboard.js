@@ -1,20 +1,26 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Card, CardContent, Typography, Grid2 } from '@mui/material';
+import api from '../services/api';
 
 const StudentDashboard = () => {
   const [students, setStudents] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/students')
+    api.get('/Student') 
       .then((response) => {
         setStudents(response.data);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error("Error fetching students:", error);
+        setError("Failed to load student data");
+      });
   }, []);
 
   return (
     <Grid2 container spacing={3}>
+      {error && <Typography color="error">{error}</Typography>}
       {students.map(student => (
         <Grid2 item xs={12} sm={6} md={4} key={student._id}>
           <Card>
@@ -30,3 +36,4 @@ const StudentDashboard = () => {
 }
 
 export default StudentDashboard;
+

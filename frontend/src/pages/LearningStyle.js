@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../services/api'; // Adjust the path as necessary
 
 const LearningStyle = () => {
   const [learningStyles, setLearningStyles] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/learningstyles')
+    api.get('/Learningstyles') // Use `api.get` instead of `axios.get`
       .then(response => setLearningStyles(response.data))
-      .catch(error => console.error(error));
+      .catch(error => console.error("Error fetching learning styles:", error));
   }, []);
 
   return (
