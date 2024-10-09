@@ -1,4 +1,4 @@
-import './App.css';
+import Index from './index.css'
 import LearningStyle from './pages/LearningStyle';
 import Progress from './pages/Progress';
 import StudentDashboard from './pages/StudentDashboard';
@@ -27,13 +27,9 @@ function App() {
       <Router>
         <div className="App">
           <header className="App-header">
-            <h1 className="text-4xl font-bold text-center">Study Mate Dashboard</h1>
-            <p className="mt-4 text-center">
-              Track your learning style and progress below.
-            </p>
             <div className="flex flex-col items-center mt-8">
               <Routes>
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/learning-style" element={<LearningStyle />} />
                 <Route path="/progress" element={<Progress />} />
                 <Route path="/dashboard" element={<StudentDashboard />} />

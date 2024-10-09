@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Card, CardContent, Typography, Grid2 } from '@mui/material';
 import api from '../services/api'; // Assuming api setup is correct
+import { Link } from 'react-router-dom';
 
 const Resources = () => {
   const [resources, setResources] = useState([]);

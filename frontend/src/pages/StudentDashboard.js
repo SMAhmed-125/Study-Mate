@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Card, CardContent, Typography, Grid2 } from '@mui/material';
 import api from '../services/api';
+import { Link } from 'react-router-dom';
 
 const StudentDashboard = () => {
   const [students, setStudents] = useState([]);
