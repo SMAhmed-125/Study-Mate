@@ -5,7 +5,7 @@ const LearningStyle = () => {
   const [learningStyles, setLearningStyles] = useState([]);
 
   useEffect(() => {
-    api.get('/Learningstyles') // Use `api.get` instead of `axios.get`
+    api.get('/api/learning-style') // Use `api.get` instead of `axios.get`
       .then(response => setLearningStyles(response.data))
       .catch(error => console.error("Error fetching learning styles:", error));
   }, []);

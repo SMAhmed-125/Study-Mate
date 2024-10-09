@@ -4,7 +4,7 @@ const resourcesRouter = express.Router();
 
 
   
-  resourcesRouter.get('/resources', async (req, res) => {
+  resourcesRouter.get('/', async (req, res) => {
     const { learningStyle } = req.query;
     try {
       const resources = await Resource.find({ learningStyle });

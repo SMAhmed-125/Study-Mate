@@ -25,7 +25,7 @@ app.use((err, req, res, next) => {
 });
 
 // Routes
-app.use('/api/learning-styles', learningStyleRoutes);   // Prefix for learning styles routes
+app.use('/api/learning-style', learningStyleRoutes);   // Prefix for learning styles routes
 app.use('/api/progress', progressRoutes);               // Prefix for progress routes
 app.use('/api/resources', resourceRoutes);              // Prefix for resources routes
 app.use('/api/students', studentRoutes);                // Prefix for student routes

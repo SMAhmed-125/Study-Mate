@@ -2,7 +2,7 @@ const express = require('express');
 const LearningStyle = require('../models/LearningStyle');
 const learningstyleRouter = express.Router();
 
-learningstyleRouter.get('/LearningStyle', async (req, res) => {
+learningstyleRouter.get('/', async (req, res) => {
     try {
         const learning_styles = await LearningStyle.find();
         res.json(learning_styles);
@@ -13,7 +13,7 @@ learningstyleRouter.get('/LearningStyle', async (req, res) => {
 })
 
   // Add a new learning style
-  learningstyleRouter.post('/LearningStyle', async (req, res) => {
+  learningstyleRouter.post('/', async (req, res) => {
     const learningStyle = new LearningStyle({
       style: req.body.style,
       description: req.body.description

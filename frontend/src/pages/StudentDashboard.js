@@ -9,7 +9,7 @@ const StudentDashboard = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    api.get('/Student') 
+    api.get('/api/students') 
       .then((response) => {
         setStudents(response.data);
       })

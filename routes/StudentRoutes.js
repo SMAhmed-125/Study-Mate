@@ -3,7 +3,7 @@ const Student = require('../models/Student');
 const studentRouter = express.Router();
 
 
-studentRouter.get('/Student', async (req, res) => {
+studentRouter.get('/', async (req, res) => {
     try {
         const students = await Student.find();
         res.json(students);
@@ -13,7 +13,7 @@ studentRouter.get('/Student', async (req, res) => {
 })
 
 // Add a new student
-studentRouter.post('/Student', async (req, res) => {
+studentRouter.post('/', async (req, res) => {
     const student = new Student({
       name: req.body.name,
       email: req.body.email,
@@ -34,7 +34,7 @@ studentRouter.post('/Student', async (req, res) => {
 
   
   // Update a student's progress
-  studentRouter.patch('/Student/:id', async (req, res) => {
+  studentRouter.patch('/:id', async (req, res) => {
     try {
       const student = await Student.findById(req.params.id);
       if (!student) return res.status(404).json({ message: 'Student not found' });
@@ -51,7 +51,7 @@ studentRouter.post('/Student', async (req, res) => {
   });
   
   // Delete a student
-  studentRouter.delete('/Student/:id', async (req, res) => {
+  studentRouter.delete('/:id', async (req, res) => {
     try {
       const student = await Student.findById(req.params.id);
       if (!student) return res.status(404).json({ message: 'Student not found' });

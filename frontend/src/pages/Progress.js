@@ -8,7 +8,7 @@ const Progress = () => {
   const [progress, setProgress] = useState([]);
 
   useEffect(() => {
-    api.get('/Progress')
+    api.get('/api/progress')
       .then(response => setProgress(response.data))
       .catch(error => console.error(error));
   }, []);

@@ -4,7 +4,7 @@ const Progress = require('../models/Progress');
 const progressRouter = express.Router();
 
 
-progressRouter.get('/Progress', async (req, res) => {
+progressRouter.get('/', async (req, res) => {
     try {
         const progress = await Progress.find().populate('student');
         res.json(progress);
@@ -14,7 +14,7 @@ progressRouter.get('/Progress', async (req, res) => {
 })
 
   // Add new progress
-  progressRouter.post('/Progress', async (req, res) => {
+  progressRouter.post('/', async (req, res) => {
     const progress = new Progress({
       student: req.body.student,
       progressPercentage: req.body.progressPercentage

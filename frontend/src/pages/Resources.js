@@ -9,7 +9,7 @@ const Resources = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    api.get('/Resources') // Ensure this endpoint is correct and matches your backend
+    api.get('/api/resources') // Ensure this endpoint is correct and matches your backend
       .then((response) => {
         setResources(response.data);
       })
